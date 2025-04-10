@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Vicente | Portafolio</title>
+</head>
+<body>
+
+  <!-- Mensajes flash -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul style="text-align: center; color: #b2a344; font-weight: bold; margin-top: 20px;">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <header class="header">
+    <nav class="header__nav main-nav">
+      <ul class="main-nav__list main-list">
+        <li><a class="list-item__link" href="#home">HOME</a></li>
+        <li><a class="list-item__link" href="#about">ACERCA DE MÍ</a></li>
+        <li><a class="list-item__link" href="#skills">HABILIDADES</a></li>
+        <li><a class="list-item__link" href="#feedback">FEEDBACK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="home" id="home">
+      <h1 class="home__title">Vicente</h1>
+      <img class="info-block__img" src="{{ url_for('static', filename='img/yo.png') }}" alt="Foto de Vicente" width="300">
+      <p class="home__subtitle">Desarrollador Web | Programador | Futbolista Amateur</p>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="about__title">Acerca de Mí</h2>
+      <div class="info-block">
+        <p class="info-block__text">
+          Hola, soy Vicente. Estoy a punto de graduarme de Koodland como programador.
+          Me apasiona desarrollar sitios y aplicaciones web. También juego fútbol en mis tiempos libres como lateral derecho.
+        </p>
+        <img class="info-block__img" src="{{ url_for('static', filename='img/yo.png') }}" alt="Foto de Vicente" width="300">
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <h2 class="skills__title">Mis Habilidades</h2>
+      <ul class="skills-list">
+        <li class="skill">
+          <img class="skill__img" src="{{ url_for('static', filename='img/python.png') }}" alt="Python">
+          <span class="skill__info">Python</span>
+          <a class="skill__button" href="https://github.com/TU_USUARIO/proyecto-python" target="_blank">Ver Proyecto</a>
+        </li>
+        <li class="skill">
+          <img class="skill__img" src="{{ url_for('static', filename='img/discord.png') }}" alt="Discord Bots">
+          <span class="skill__info">Bots de Discord</span>
+          <a class="skill__button" href="https://github.com/Xx-vicen-xX/bot.discord" target="_blank">Ver Proyecto</a>
+        </li>
+        <li class="skill">
+          <img class="skill__img" src="{{ url_for('static', filename='img/html.png') }}" alt="HTML/CSS">
+          <span class="skill__info">Páginas Web</span>
+          <a class="skill__button" href="https://github.com/TU_USUARIO/web-page" target="_blank">Ver Proyecto</a>
+        </li>
+        <li class="skill">
+          <img class="skill__img" src="{{ url_for('static', filename='img/db.webp') }}" alt="Bases de Datos">
+          <span class="skill__info">Bases de Datos</span>
+          <a class="skill__button" href="https://github.com/TU_USUARIO/db-project" target="_blank">Ver Proyecto</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="feedback" id="feedback">
+      <h2 class="feedback__title">Feedback</h2>
+      <form class="form" method="POST" action="#feedback">
+        <input type="email" class="form__input" name="email" placeholder="Tu correo" required>
+        <textarea name="text" class="form__input" rows="6" placeholder="Deja tu comentario" required></textarea>
+        <button type="submit" class="form__button">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vicente. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

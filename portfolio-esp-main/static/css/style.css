@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+
+/* General Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0 3%;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  background: linear-gradient(to bottom, #FFDEE9, #B5FFFC);
+  color: #333333;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h1, h2 {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+img {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  width: 100%;
+  background: #3F51B5;
+}
+
+.main-list {
+  display: flex;
+  gap: 80px;
+}
+
+.list-item__link {
+  position: relative;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.list-item__link::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  width: 0%;
+  height: 3px;
+  background: #FFC107;
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+
+.list-item__link:hover::after {
+  width: 100%;
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(../img/developer.png) center bottom / cover no-repeat;
+  padding: 10vh 10vw 80vh;
+  gap: 20px;
+  text-align: center;
+}
+
+.home__title {
+  font-size: 70px;
+  color: #3F51B5;
+}
+
+.home__subtitle {
+  font-weight: 700;
+  font-size: 24px;
+  color: #444;
+}
+
+/* About Section */
+.about {
+  margin-bottom: 150px;
+}
+
+.about__title,
+.skills__title,
+.feedback__title {
+  font-size: 50px;
+  color: #3F51B5;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 40px;
+}
+
+.about__title::after,
+.skills__title::after,
+.feedback__title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: #FFC107;
+  border-radius: 10px;
+}
+
+.info-block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.info-block__text {
+  width: 100%;
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.info-block__img {
+  border-radius: 50%;
+  width: 200px;
+  height: auto;
+}
+
+/* Skills Section */
+.skills {
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.skill__img {
+  width: 100px;
+  height: auto;
+}
+
+.skill__info {
+  width: 150px;
+  font-weight: bold;
+  color: #3F51B5;
+}
+
+.skill__button {
+  background-color: #FFC107;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.skill__button:hover {
+  background-color: #FF6F61;
+  color: #fff;
+}
+
+/* Project Section */
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.project__img {
+  border-radius: 30px;
+  max-width: 90%;
+}
+
+.project__link {
+  position: relative;
+  font-size: 20px;
+  font-weight: 700;
+  color: #00BFA6;
+}
+
+.project__link::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 55%;
+  height: 3px;
+  background: #FFC107;
+  border-radius: 10px;
+  transition: width 0.2s;
+}
+
+.project__link:hover::after {
+  width: 100%;
+}
+
+/* Feedback Form */
+.feedback {
+  margin-bottom: 100px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form__input {
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #00BFA6;
+  color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  resize: none;
+}
+
+.form__input::placeholder {
+  color: #999;
+}
+
+.form__input:focus {
+  border-color: #FFC107;
+  outline: none;
+}
+
+.form__button {
+  background-color: #00BFA6;
+  color: white;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form__button:hover {
+  background-color: #FF6F61;
+}
+
+/* Footer */
+footer {
+  background-color: #3F51B5;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 14px;
+}
